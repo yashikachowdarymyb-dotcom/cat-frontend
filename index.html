@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CAT App</title>
+</head>
+<body style="font-family:sans-serif; padding:20px">
+
+<h2>📱 CAT Prep App</h2>
+
+<button onclick="load()">Load Backend</button>
+
+<p id="output"></p>
+
+<script>
+function load() {
+  fetch("https://cat-backend.onrender.com")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("output").innerText = JSON.stringify(data)
+    })
+}
+</script>
+
+</body>
+</html>
